@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+    .og {
+      width: 1200px; height: 630px;
+      background: #0F1F36 url('img/cover-hero.jpg') center/cover;
+      position: relative;
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+    .og::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(15,31,54,0.30) 0%, rgba(0,30,55,0.92) 100%);
+    }
+    .og-content {
+      position: absolute; inset: 0;
+      padding: 70px 90px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      color: #F8F6F1; z-index: 2;
+    }
+    .og-eyebrow {
+      font-size: 13px; letter-spacing: 0.3em;
+      text-transform: uppercase; font-weight: 700;
+      color: #FFC72C;
+    }
+    .og-headline {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 116px;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      max-width: 1020px;
+    }
+    .og-headline .accent { color: #0076BA; }
+    .og-sub {
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 1.4;
+      max-width: 720px;
+      margin-top: 14px;
+      color: rgba(248,246,241,0.9);
+    }
+    .og-footer {
+      font-size: 14px;
+      color: rgba(248,246,241,0.7);
+      letter-spacing: 0.1em;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="og">
+    <div class="og-content">
+      <div class="og-eyebrow">Staff training · BGC Permian Basin</div>
+      <div>
+        <h1 class="og-headline">Stop the <span class="accent">scroll.</span></h1>
+        <p class="og-sub">Capturing moments that make people care about your club.</p>
+      </div>
+      <div class="og-footer">Hallpass Digital · Anecdotal Media · 2026</div>
+    </div>
+  </div>
+</body>
+</html>
