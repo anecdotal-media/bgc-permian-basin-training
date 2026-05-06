@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stop the Scroll · BGC Permian Basin Staff Training</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:title" content="Stop the Scroll — BGC Permian Basin Staff Training">
+  <meta property="og:description" content="A one-hour live training on capturing and sharing impact moments on social media. Prepared for Boys &amp; Girls Clubs of the Permian Basin by Hallpass Digital + Anecdotal Media.">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;700&family=Anton&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #F8F6F1;
+      --warm-white: #FDFCF9;
+      --ink: #0F1F36;
+      --ink-soft: #4A5970;
+      --bgc-blue: #0076BA;
+      --bgc-blue-dark: #00558A;
+      --bgc-blue-light: #E6F1F9;
+      --gold: #FFC72C;
+      --rule: rgba(15,31,54,0.12);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --display: 'Anton', 'Bebas Neue', Impact, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      font-family: var(--sans);
+      font-weight: 400;
+      background: var(--cream);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+    }
+
+    h1, h2, h3 { font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+    em { font-style: italic; color: var(--bgc-blue); font-weight: 500; }
+    p { font-size: 17px; line-height: 1.65; }
+    img { max-width: 100%; display: block; }
+
+    .snap-container {
+      scroll-snap-type: y mandatory;
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+    }
+
+    .slide {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      min-height: 100vh;
+      width: 100%;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      background: var(--cream);
+    }
+
+    .slide-num {
+      position: absolute;
+      top: 32px;
+      right: 40px;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      color: var(--bgc-blue);
+    }
+
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--bgc-blue);
+      margin-bottom: 24px;
+    }
+
+    .nav-dots {
+      position: fixed;
+      right: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      z-index: 100;
+    }
+    .nav-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(15,31,54,0.25);
+      border: none; padding: 0; cursor: pointer;
+      transition: all 0.3s;
+    }
+    .nav-dot.active {
+      background: var(--bgc-blue);
+      height: 16px; border-radius: 3px;
+    }
+    .nav-dot:hover { background: var(--bgc-blue); opacity: 0.7; }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    [data-reveal].is-revealed { opacity: 1; transform: none; }
+    [data-delay="1"] { transition-delay: 0.1s; }
+    [data-delay="2"] { transition-delay: 0.22s; }
+    [data-delay="3"] { transition-delay: 0.36s; }
+    [data-delay="4"] { transition-delay: 0.52s; }
+    [data-delay="5"] { transition-delay: 0.7s; }
+
+    /* ---- COVER ---- */
+    .slide.cover {
+      padding: 0;
+      background: var(--ink);
+      color: var(--warm-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .cover-img {
+      position: absolute; inset: 0;
+      background-image: url('img/cover-hero.jpg');
+      background-size: cover; background-position: center;
+      filter: brightness(0.55) saturate(1.1);
+    }
+    .cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,30,55,0.85) 100%);
+    }
+    .cover-content {
+      position: relative; z-index: 2;
+      padding: 60px 80px;
+      display: flex; flex-direction: column;
+      justify-content: space-between;
+      height: 100%; min-height: 100vh;
+    }
+    .cover-eyebrow {
+      font-size: 12px; letter-spacing: 0.3em;
+      text-transform: uppercase; font-weight: 700;
+      color: var(--gold);
+    }
+    .cover-headline {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(64px, 9vw, 130px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      max-width: 1100px;
+    }
+    .cover-headline .accent { color: var(--bgc-blue); }
+    .cover-sub {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: clamp(20px, 1.8vw, 26px);
+      line-height: 1.4;
+      max-width: 720px;
+      margin-top: 24px;
+      color: rgba(248,246,241,0.9);
+    }
+    .cover-footer {
+      font-family: var(--sans);
+      font-size: 13px; font-weight: 400;
+      color: rgba(248,246,241,0.7);
+      letter-spacing: 0.08em;
+    }
+    .cover .slide-num { color: rgba(248,246,241,0.45); }
+
+    /* ---- BIG STATEMENT (solid color, hero text) ---- */
+    .slide.statement { padding: 80px 110px; }
+    .slide.statement.dark { background: var(--ink); color: var(--warm-white); }
+    .slide.statement.blue { background: var(--bgc-blue); color: var(--warm-white); }
+    .slide.statement.dark .slide-num,
+    .slide.statement.blue .slide-num { color: rgba(255,255,255,0.55); }
+    .statement-text {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(44px, 6vw, 84px);
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+      max-width: 1200px;
+    }
+    .statement-text em {
+      font-style: normal;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .slide.statement.blue .statement-text em { color: var(--gold); font-weight: 700; }
+    .statement-attribution {
+      margin-top: 36px;
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      opacity: 0.7;
+    }
+
+    /* ---- CONTENT (eyebrow + headline + body) ---- */
+    .content-eyebrow {
+      font-family: var(--sans);
+      font-size: 12px; letter-spacing: 0.25em;
+      text-transform: uppercase; font-weight: 700;
+      color: var(--bgc-blue);
+      margin-bottom: 28px;
+    }
+    .content-headline {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      max-width: 1100px;
+      margin-bottom: 32px;
+    }
+    .content-body {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: clamp(18px, 1.5vw, 22px);
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 780px;
+    }
+
+    .slide.content-2col {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .slide.content-2col.flip { direction: rtl; }
+    .slide.content-2col.flip > * { direction: ltr; }
+    .feature-image {
+      aspect-ratio: 4 / 5;
+      background-size: cover;
+      background-position: center;
+      background-color: rgba(0,118,186,0.08);
+      border-radius: 4px;
+      box-shadow: 0 16px 50px rgba(15,31,54,0.18);
+    }
+
+    /* ---- BULLETS / LISTS ---- */
+    .bullet-list {
+      list-style: none;
+      max-width: 880px;
+      margin-top: 12px;
+    }
+    .bullet-list li {
+      font-family: var(--sans);
+      font-size: clamp(18px, 1.5vw, 22px);
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--ink);
+      padding: 14px 0 14px 32px;
+      position: relative;
+      border-bottom: 1px solid var(--rule);
+    }
+    .bullet-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 26px;
+      width: 14px; height: 2px;
+      background: var(--bgc-blue);
+    }
+    .bullet-list li b { font-weight: 600; color: var(--ink); }
+
+    .ordered-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 60px;
+      max-width: 1200px;
+      margin-top: 16px;
+    }
+    .ordered-item { display: flex; gap: 24px; align-items: flex-start; }
+    .ordered-num {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 1;
+      color: var(--bgc-blue);
+      flex-shrink: 0;
+      letter-spacing: -0.03em;
+    }
+    .ordered-text {
+      font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ink);
+      padding-top: 6px;
+    }
+    .ordered-text b { font-weight: 700; display: block; margin-bottom: 4px; font-size: 19px; }
+
+    /* ---- THREE-UP (E/E/I) ---- */
+    .three-up {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 24px;
+      max-width: 1300px;
+    }
+    .three-card {
+      background: var(--warm-white);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 36px 32px;
+      display: flex; flex-direction: column;
+      gap: 14px;
+    }
+    .three-card .num {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.2em;
+      color: var(--bgc-blue);
+    }
+    .three-card h3 {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .three-card p {
+      font-size: 15.5px;
+      font-weight: 300;
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+
+    /* ---- VENN ---- */
+    .venn-wrap {
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 16px;
+      position: relative;
+    }
+    .venn-svg { width: clamp(420px, 50vw, 640px); height: auto; }
+    .venn-label {
+      font-family: var(--sans);
+      font-weight: 700; font-size: 14px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      fill: var(--bgc-blue);
+    }
+    .venn-callout {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      fill: var(--gold);
+    }
+
+    /* ---- CONTRAST (2-COL COMPARISON) ---- */
+    .contrast-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 12px;
+    }
+    .contrast-card {
+      padding: 32px;
+      border-radius: 6px;
+      background: var(--warm-white);
+      border: 1px solid var(--rule);
+    }
+    .contrast-card.bad { opacity: 0.85; }
+    .contrast-card.good {
+      border-color: var(--bgc-blue);
+      box-shadow: 0 12px 40px rgba(0,118,186,0.12);
+    }
+    .contrast-label {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .contrast-card.bad .contrast-label { color: var(--ink-soft); }
+    .contrast-card.good .contrast-label { color: var(--bgc-blue); }
+    .contrast-headline {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .contrast-image {
+      aspect-ratio: 16/10;
+      background-size: cover; background-position: center;
+      border-radius: 4px;
+      margin-bottom: 18px;
+      background-color: rgba(0,118,186,0.08);
+    }
+    .contrast-body {
+      font-size: 15.5px;
+      font-weight: 300;
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+
+    /* ---- AUTHORITY (Ryan/Al) ---- */
+    .authority-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .auth-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px 28px;
+      max-width: 520px;
+    }
+    .auth-stat {
+      padding: 18px 22px;
+      background: var(--warm-white);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .auth-stat .num {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+      color: var(--bgc-blue);
+      line-height: 1;
+    }
+    .auth-stat .label {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-top: 8px;
+      font-weight: 500;
+    }
+    .auth-brands {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 2;
+      color: var(--ink-soft);
+      letter-spacing: 0.06em;
+      margin-top: 20px;
+    }
+    .auth-brands b { color: var(--ink); font-weight: 700; letter-spacing: 0.04em; }
+
+    /* ---- VERTICAL ICON (slide 18) ---- */
+    .phone-illustration {
+      display: flex; align-items: flex-start; justify-content: flex-start;
+      gap: 56px;
+      margin-top: 32px;
+      padding-bottom: 40px;
+    }
+    .phone-figure { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .phone {
+      width: 100px;
+      height: 180px;
+      border: 4px solid var(--ink);
+      border-radius: 18px;
+      background: var(--bgc-blue-light);
+    }
+    .phone.horizontal { width: 180px; height: 100px; opacity: 0.4; border-color: var(--ink-soft); background: rgba(74,89,112,0.1); }
+    .phone-label {
+      font-size: 12px; letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 700;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+    .phone-label.good { color: var(--bgc-blue); }
+    .platform-row {
+      display: flex; gap: 14px; margin-top: 60px;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .platform-row span { padding: 8px 16px; background: var(--bgc-blue-light); border-radius: 99px; color: var(--bgc-blue); }
+
+    /* ---- RECAP CARD (slide 26) ---- */
+    .recap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 16px;
+    }
+    .recap-card {
+      padding: 36px 28px;
+      background: var(--warm-white);
+      border-top: 4px solid var(--bgc-blue);
+      border-radius: 0 0 6px 6px;
+    }
+    .recap-card .step {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--bgc-blue);
+      margin-bottom: 14px;
+    }
+    .recap-card h3 {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+    .recap-card ul { list-style: none; }
+    .recap-card li {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--rule);
+    }
+    .recap-card li:last-child { border-bottom: none; }
+
+    /* ---- CLOSING ---- */
+    .slide.closing {
+      background: var(--ink);
+      color: var(--warm-white);
+      padding: 80px 110px;
+    }
+    .slide.closing .slide-num { color: rgba(248,246,241,0.45); }
+    .closing-eyebrow {
+      font-size: 12px; letter-spacing: 0.3em;
+      text-transform: uppercase; font-weight: 700;
+      color: var(--gold); margin-bottom: 24px;
+    }
+    .closing-headline {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(44px, 5.5vw, 78px);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      margin-bottom: 36px;
+      max-width: 1100px;
+    }
+    .closing-body {
+      font-size: 19px;
+      line-height: 1.6;
+      max-width: 720px;
+      color: rgba(248,246,241,0.85);
+      font-weight: 300;
+    }
+    .closing-cta {
+      margin-top: 56px;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(22px, 2.4vw, 32px);
+      color: var(--bgc-blue);
+      letter-spacing: -0.015em;
+    }
+    .closing-cta em {
+      font-style: italic; color: var(--gold); font-weight: 700;
+    }
+
+    /* ---- LOGO LOCKUP (footer) ---- */
+    .logo-lockup {
+      display: flex; align-items: center; gap: 18px;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(248,246,241,0.7);
+    }
+    .logo-lockup img { height: 36px; opacity: 0.85; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .slide { padding: 48px 32px; }
+      .slide.statement { padding: 60px 36px; }
+      .slide.content-2col { grid-template-columns: 1fr; gap: 32px; }
+      .slide.content-2col.flip { direction: ltr; }
+      .three-up, .recap-grid, .ordered-grid, .contrast-grid, .authority-grid {
+        grid-template-columns: 1fr; gap: 18px;
+      }
+      .cover-content { padding: 40px 28px; }
+    }
+
+    /* ---- PRINT ---- */
+    @media print {
+      @page { size: 11in 8.5in; margin: 0; }
+      html, body {
+        height: auto;
+        overflow: visible;
+        background: var(--cream);
+      }
+      .snap-container {
+        height: auto; overflow: visible;
+        scroll-snap-type: none;
+      }
+      .slide {
+        min-height: auto;
+        height: 8.5in;
+        width: 11in;
+        page-break-after: always;
+        page-break-inside: avoid;
+        scroll-snap-align: none;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+        padding: 0.5in 0.75in;
+      }
+      .slide.cover, .slide.statement, .slide.closing {
+        padding: 0.5in 0.75in;
+      }
+      .slide:last-child { page-break-after: auto; }
+      .nav-dots { display: none !important; }
+      [data-reveal] { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="snap-container">
+
+    <!-- 01 COVER -->
+    <section class="slide cover" id="slide-01">
+      <div class="cover-img"></div>
+      <div class="cover-overlay"></div>
+      <div class="slide-num">01 / 29</div>
+      <div class="cover-content">
+        <div data-reveal data-delay="1" class="cover-eyebrow">Staff training · Boys &amp; Girls Clubs of the Permian Basin</div>
+        <div>
+          <h1 data-reveal data-delay="2" class="cover-headline">Stop the <span class="accent">scroll.</span></h1>
+          <p data-reveal data-delay="3" class="cover-sub">Capturing moments that make people care about your club.</p>
+        </div>
+        <div data-reveal data-delay="4" class="cover-footer">Hallpass Digital · Anecdotal Media · 2026</div>
+      </div>
+    </section>
+
+    <!-- 02 HOOK -->
+    <section class="slide statement blue" id="slide-02">
+      <div class="slide-num">02 / 29</div>
+      <p data-reveal data-delay="1" class="statement-text">You already have <em>$20,000</em> of marketing equipment in your pocket.</p>
+      <p data-reveal data-delay="3" class="statement-attribution">— You just haven't been using it that way.</p>
+    </section>
+
+    <!-- 03 WHAT'S AT STAKE -->
+    <section class="slide content-2col" id="slide-03">
+      <div class="slide-num">03 / 29</div>
+      <div>
+        <div data-reveal data-delay="1" class="content-eyebrow">What's at stake</div>
+        <h2 data-reveal data-delay="2" class="content-headline">More kids. More donors. More volunteers. <em>Less invisible.</em></h2>
+        <p data-reveal data-delay="3" class="content-body">Every working parent in the Permian Basin scrolls Facebook and Instagram. Right now, most of them have no idea what actually happens here. The story is happening — every single day. The question is whether anyone outside this room ever sees it.</p>
+      </div>
+      <div data-reveal data-delay="3" class="feature-image" style="background-image: url('img/cooking.jpg');"></div>
+    </section>
+
+    <!-- 04 YOU ARE THE CAMERA CREW -->
+    <section class="slide content-2col flip" id="slide-04">
+      <div class="slide-num">04 / 29</div>
+      <div>
+        <div data-reveal data-delay="1" class="content-eyebrow">Why you</div>
+        <h2 data-reveal data-delay="2" class="content-headline">You are the <em>camera crew</em> now.</h2>
+        <p data-reveal data-delay="3" class="content-body">There is no professional film team on retainer. There can't be one in every club, on every field trip, in every kitchen. But you're already there. You see the moments worth telling. The skills in this room are what move BGC from invisible to unmissable.</p>
+      </div>
+      <div data-reveal data-delay="3" class="feature-image" style="background-image: url('img/club-group.jpg');"></div>
+    </section>
+
+    <!-- 05 RYAN -->
+    <section class="slide" id="slide-05">
+      <div class="slide-num">05 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Hi, I'm Ryan</div>
+      <h2 data-reveal data-delay="2" class="content-headline">I've spent twenty years figuring out <em>what makes people care.</em></h2>
+      <div class="authority-grid" style="margin-top: 28px;">
+        <div data-reveal data-delay="3">
+          <p class="content-body" style="margin-bottom: 18px;">Producer, marketer, and founder of <b style="color:var(--ink);font-weight:700;">Anecdotal Media</b>. I've worked with the brands and people below — and built one of TikTok's largest accounts on consumer psychology along the way.</p>
+          <p class="auth-brands"><b>Discovery</b> · <b>Nike</b> · <b>Google</b> · <b>The Olympics</b> · John Mayer · Mike Rowe · Snoop Dogg</p>
+        </div>
+        <div data-reveal data-delay="4" class="auth-stats">
+          <div class="auth-stat">
+            <div class="num">266K</div>
+            <div class="label">TikTok @invisibleplaybook</div>
+          </div>
+          <div class="auth-stat">
+            <div class="num">12.5K</div>
+            <div class="label">Instagram @invisibleplaybook</div>
+          </div>
+          <div class="auth-stat">
+            <div class="num">1M+</div>
+            <div class="label">Total likes</div>
+          </div>
+          <div class="auth-stat">
+            <div class="num">20+</div>
+            <div class="label">Years in storytelling</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 AL -->
+    <section class="slide" id="slide-06">
+      <div class="slide-num">06 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">And this is Al</div>
+      <h2 data-reveal data-delay="2" class="content-headline">Two decades running social for brands you've heard of.</h2>
+      <p data-reveal data-delay="3" class="content-body" style="margin-top: 24px; max-width: 880px;">Al has spent his career inside the social-media machine — building accounts, reading analytics, learning what makes a post land or die in real time. We're a strategist and a practitioner together, and today we're handing you the version we wish we'd had at the start.</p>
+    </section>
+
+    <!-- 07 PARETO -->
+    <section class="slide" id="slide-07">
+      <div class="slide-num">07 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Why us, why now</div>
+      <h2 data-reveal data-delay="2" class="content-headline">There are a hundred things you could learn. Today we're giving you <em>the twenty percent</em> that gets you eighty percent of the results.</h2>
+      <p data-reveal data-delay="3" class="content-body" style="margin-top: 16px;">No film school. No expensive gear. No quitting your day job to become a content creator. Just the handful of habits that turn a phone into a storytelling tool.</p>
+    </section>
+
+    <!-- 08 WHAT WILL YOU LEARN -->
+    <section class="slide" id="slide-08">
+      <div class="slide-num">08 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">What you'll leave with</div>
+      <h2 data-reveal data-delay="2" class="content-headline">Two things: <em>strategy,</em> then tactics.</h2>
+      <div class="ordered-grid" style="margin-top: 36px;">
+        <div data-reveal data-delay="3" class="ordered-item">
+          <div class="ordered-num">01</div>
+          <div class="ordered-text"><b>Strategy</b>How to think about what you're capturing — what story, for which person, with what feeling.</div>
+        </div>
+        <div data-reveal data-delay="4" class="ordered-item">
+          <div class="ordered-num">02</div>
+          <div class="ordered-text"><b>Tactics</b>How to actually capture it — lighting, audio, framing, and the small habits that separate amateur from pro.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 E/E/I -->
+    <section class="slide" id="slide-09">
+      <div class="slide-num">09 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Strategy 01</div>
+      <h2 data-reveal data-delay="2" class="content-headline">Why does anyone watch <em>anything</em> on social?</h2>
+      <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 24px;">Three reasons. That's it.</p>
+      <div class="three-up">
+        <div data-reveal data-delay="3" class="three-card">
+          <div class="num">01</div>
+          <h3>Entertaining</h3>
+          <p>Funny, surprising, satisfying. Makes them feel something pleasant in five seconds.</p>
+        </div>
+        <div data-reveal data-delay="4" class="three-card">
+          <div class="num">02</div>
+          <h3>Educational</h3>
+          <p>They learned something they didn't know. Useful, novel, "huh, I didn't know that."</p>
+        </div>
+        <div data-reveal data-delay="5" class="three-card">
+          <div class="num">03</div>
+          <h3>Inspirational</h3>
+          <p>It moved them. Made them want to be better, do better, give more, try harder.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 VENN -->
+    <section class="slide" id="slide-10">
+      <div class="slide-num">10 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">The overlap</div>
+      <h2 data-reveal data-delay="2" class="content-headline">The best posts hit <em>two or three</em> at once.</h2>
+      <div class="venn-wrap" data-reveal data-delay="3">
+        <svg class="venn-svg" viewBox="0 0 620 440" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="235" cy="180" r="120" fill="rgba(0,118,186,0.18)" stroke="#0076BA" stroke-width="2.5"/>
+          <circle cx="385" cy="180" r="120" fill="rgba(0,118,186,0.18)" stroke="#0076BA" stroke-width="2.5"/>
+          <circle cx="310" cy="295" r="120" fill="rgba(0,118,186,0.18)" stroke="#0076BA" stroke-width="2.5"/>
+          <text x="155" y="110" class="venn-label" text-anchor="middle">Entertaining</text>
+          <text x="465" y="110" class="venn-label" text-anchor="middle">Educational</text>
+          <text x="310" y="430" class="venn-label" text-anchor="middle">Inspirational</text>
+          <text x="310" y="240" class="venn-callout" text-anchor="middle">Magic happens here</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 11 YOU ALREADY KNOW THIS -->
+    <section class="slide statement blue" id="slide-11">
+      <div class="slide-num">11 / 29</div>
+      <p data-reveal data-delay="1" class="statement-text">You already <em>know</em> this. Last time you stopped scrolling — why?</p>
+      <p data-reveal data-delay="3" class="statement-attribution">— Tonight: pay attention to your own thumb.</p>
+    </section>
+
+    <!-- 12 WEAK BGC EXAMPLE -->
+    <section class="slide content-2col" id="slide-12">
+      <div class="slide-num">12 / 29</div>
+      <div>
+        <div data-reveal data-delay="1" class="content-eyebrow">Example · A typical post</div>
+        <h2 data-reveal data-delay="2" class="content-headline">"We had a great day at the club!"</h2>
+        <p data-reveal data-delay="3" class="content-body">Five smiling faces. Standing in front of a logo wall. Caption: <em>"So much fun today!"</em> It feels like a press release for an event nobody's heard of. Not entertaining. Not educational. Not particularly inspirational. The thumb keeps scrolling.</p>
+      </div>
+      <div data-reveal data-delay="3" class="feature-image" style="background-image: url('img/posed.jpg');"></div>
+    </section>
+
+    <!-- 13 STRONG BGC EXAMPLE -->
+    <section class="slide content-2col flip" id="slide-13">
+      <div class="slide-num">13 / 29</div>
+      <div>
+        <div data-reveal data-delay="1" class="content-eyebrow">Example · A post that lands</div>
+        <h2 data-reveal data-delay="2" class="content-headline">A close-up. A real moment. <em>One face.</em></h2>
+        <p data-reveal data-delay="3" class="content-body">A girl, mid-thought, beads in her hair, in a room you can't quite see. Caption: <em>"This is Maya. She's eleven. After school, she comes here and reads to the kindergarten class — because she remembers what it felt like to need someone to sit with."</em> That's a story. A donor cares. A parent cares. A volunteer signs up.</p>
+      </div>
+      <div data-reveal data-delay="3" class="feature-image" style="background-image: url('img/strong-example.jpg');"></div>
+    </section>
+
+    <!-- 14 OUTSIDER LENS TEST -->
+    <section class="slide statement dark" id="slide-14">
+      <div class="slide-num">14 / 29</div>
+      <p data-reveal data-delay="1" class="statement-text">If you didn't <em>know</em> this kid — would you stop scrolling?</p>
+      <p data-reveal data-delay="3" class="statement-attribution">— The outsider lens · Filter #1</p>
+    </section>
+
+    <!-- 15 THREE QUESTIONS -->
+    <section class="slide" id="slide-15">
+      <div class="slide-num">15 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Strategy 02 · Before you press record</div>
+      <h2 data-reveal data-delay="2" class="content-headline">Ask yourself <em>three questions.</em></h2>
+      <div class="ordered-grid" style="margin-top: 36px;">
+        <div data-reveal data-delay="3" class="ordered-item">
+          <div class="ordered-num">01</div>
+          <div class="ordered-text"><b>Who is this for?</b>A working mom. A donor. A teenager. A volunteer. Pick one — content built for everyone reaches no one.</div>
+        </div>
+        <div data-reveal data-delay="4" class="ordered-item">
+          <div class="ordered-num">02</div>
+          <div class="ordered-text"><b>What feeling do I want them to have?</b>Hopeful? Proud? Curious? Moved? Name the emotion before you shoot — it sharpens every choice you make.</div>
+        </div>
+        <div data-reveal data-delay="5" class="ordered-item">
+          <div class="ordered-num">03</div>
+          <div class="ordered-text"><b>What's the one moment in the next five minutes that would stop a thumb?</b>Watch for it. If you don't see one, wait. Don't post just to post.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16 FOUR SIGNALS -->
+    <section class="slide" id="slide-16">
+      <div class="slide-num">16 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Strategy 03 · Spot the story</div>
+      <h2 data-reveal data-delay="2" class="content-headline">Four signals to <em>stay alert</em> for.</h2>
+      <div class="ordered-grid" style="margin-top: 36px;">
+        <div data-reveal data-delay="3" class="ordered-item">
+          <div class="ordered-num">01</div>
+          <div class="ordered-text"><b>A first</b>First basket. First cooked meal. First day. First time speaking up. Firsts carry emotion automatically.</div>
+        </div>
+        <div data-reveal data-delay="3" class="ordered-item">
+          <div class="ordered-num">02</div>
+          <div class="ordered-text"><b>A surprise</b>The shy kid leading. The athlete tutoring. Anything that breaks the assumption.</div>
+        </div>
+        <div data-reveal data-delay="4" class="ordered-item">
+          <div class="ordered-num">03</div>
+          <div class="ordered-text"><b>A contrast</b>An eight-year-old explaining code. A teen reading to kindergarteners. The opposite of what someone expects from "kids' club."</div>
+        </div>
+        <div data-reveal data-delay="4" class="ordered-item">
+          <div class="ordered-num">04</div>
+          <div class="ordered-text"><b>A real relationship</b>Visible trust between a kid and a staff member. You can't fake it. You can absolutely capture it.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17 BEYOND POSED PHOTOS -->
+    <section class="slide content-2col" id="slide-17">
+      <div class="slide-num">17 / 29</div>
+      <div>
+        <div data-reveal data-delay="1" class="content-eyebrow">Tactics 01</div>
+        <h2 data-reveal data-delay="2" class="content-headline">Think <em>beyond</em> the posed photo.</h2>
+        <p data-reveal data-delay="3" class="content-body">If everyone is staring at the camera and smiling, you've made a yearbook photo, not a story. Yearbook photos belong in yearbooks. Real moments — kids mid-laugh, mid-concentration, mid-handshake — those belong on social.</p>
+      </div>
+      <div data-reveal data-delay="3" class="feature-image" style="background-image: url('img/posed.jpg'); filter: grayscale(0.4) brightness(0.92);"></div>
+    </section>
+
+    <!-- 18 VERTICAL -->
+    <section class="slide" id="slide-18">
+      <div class="slide-num">18 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Tactics 02</div>
+      <h2 data-reveal data-delay="2" class="content-headline">Always shoot <em>vertical.</em> Always.</h2>
+      <p data-reveal data-delay="3" class="content-body" style="max-width: 800px;">TikTok, Reels, Stories, Shorts — every platform that matters lives in 9:16. Horizontal video posted to vertical platforms gets cropped, ignored, or stuffed into a tiny postage stamp. Turn the phone. Lock it in.</p>
+      <div data-reveal data-delay="4" class="phone-illustration">
+        <div class="phone-figure">
+          <div class="phone vertical"></div>
+          <div class="phone-label good">Yes — vertical</div>
+        </div>
+        <div class="phone-figure">
+          <div class="phone horizontal"></div>
+          <div class="phone-label">Don't — horizontal</div>
+        </div>
+      </div>
+      <div data-reveal data-delay="5" class="platform-row" style="justify-content: flex-start;">
+        <span>TikTok</span><span>Instagram Reels</span><span>Stories</span><span>YouTube Shorts</span>
+      </div>
+    </section>
+
+    <!-- 19 LIGHTING -->
+    <section class="slide" id="slide-19">
+      <div class="slide-num">19 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Tactics 03</div>
+      <h2 data-reveal data-delay="2" class="content-headline">Lighting in <em>thirty seconds.</em></h2>
+      <ul class="bullet-list">
+        <li data-reveal data-delay="3"><b>Light should be on the face, not behind it.</b> If the brightest thing in the frame is the window, your subject becomes a silhouette.</li>
+        <li data-reveal data-delay="3"><b>Shade beats harsh sun.</b> Outdoor at noon? Find a tree, a doorway, a covered porch. Even light, no squint.</li>
+        <li data-reveal data-delay="4"><b>Indoors, face the window.</b> Free, flattering, professional-looking light. The window is your softbox.</li>
+        <li data-reveal data-delay="4"><b>If the room is dark, find a different room.</b> Phones hate darkness — the footage gets grainy and muddy. Move.</li>
+      </ul>
+    </section>
+
+    <!-- 20 AUDIO -->
+    <section class="slide" id="slide-20">
+      <div class="slide-num">20 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Tactics 04</div>
+      <h2 data-reveal data-delay="2" class="content-headline">Audio is the <em>biggest difference</em> between amateur and pro.</h2>
+      <ul class="bullet-list">
+        <li data-reveal data-delay="3"><b>Get close to your subject.</b> Phone mic at arm's length picks up everything; phone mic at three feet picks up the room.</li>
+        <li data-reveal data-delay="3"><b>Find a quiet spot.</b> If you can hear the AC vent or a basketball bouncing, your viewer will too. Step into a hallway.</li>
+        <li data-reveal data-delay="4"><b>Wait for the noise to pass.</b> Whistle, plane, slammed door — pause five seconds, then go again. Free fix.</li>
+        <li data-reveal data-delay="4"><b>Capture the room.</b> Ten seconds of background sound — kids laughing, ball bouncing — makes any edit feel alive.</li>
+      </ul>
+    </section>
+
+    <!-- 21 MUG SHOT VS COFFEE SHOP -->
+    <section class="slide" id="slide-21">
+      <div class="slide-num">21 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Tactics 05 · Testimonials</div>
+      <h2 data-reveal data-delay="2" class="content-headline">The mug shot vs. <em>the conversation.</em></h2>
+      <div class="contrast-grid">
+        <div data-reveal data-delay="3" class="contrast-card bad">
+          <div class="contrast-label">The mug shot</div>
+          <h3 class="contrast-headline">Standing. Back to a wall. Arms at the sides.</h3>
+          <p class="contrast-body">Bare wall behind. Subject visibly nervous, posture straight, no context, no setting. Reads as: forced, official, defensive. Works for the DMV. Doesn't work on Instagram.</p>
+        </div>
+        <div data-reveal data-delay="4" class="contrast-card good">
+          <div class="contrast-label">The conversation</div>
+          <h3 class="contrast-headline">Seated. Comfortable. Talking <em>across</em> from you.</h3>
+          <p class="contrast-body">Like two people in a coffee shop. Soft setting in the background — books, a window, a wall of art — that says <em>real place, real life.</em> Subject relaxes, talks like a person, not a press release.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 22 PAIR WITH B-ROLL -->
+    <section class="slide" id="slide-22">
+      <div class="slide-num">22 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Tactics 06 · Testimonials, part 2</div>
+      <h2 data-reveal data-delay="2" class="content-headline">Let them tell. Then <em>show what they're describing.</em></h2>
+      <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 28px;">A talking-head video by itself is a podcast on screen. The same testimonial, intercut with footage of the actual thing they're talking about, becomes a story.</p>
+      <ul class="bullet-list">
+        <li data-reveal data-delay="3">Parent says <em>"my daughter is reading two grade levels above where she was last year"</em> → cut to her reading.</li>
+        <li data-reveal data-delay="4">Coach says <em>"this team didn't know each other in September"</em> → cut to a high-five, a huddle, a celebration.</li>
+        <li data-reveal data-delay="4">Volunteer says <em>"I come here twice a week"</em> → cut to her walking in the door, hugging a kid.</li>
+      </ul>
+    </section>
+
+    <!-- 23 IF MOVING, YOU'RE STILL -->
+    <section class="slide statement dark" id="slide-23">
+      <div class="slide-num">23 / 29</div>
+      <p data-reveal data-delay="1" class="statement-text">If <em>they're</em> moving, you're still. If they're still — you can move slowly.</p>
+      <p data-reveal data-delay="3" class="statement-attribution">— Tactics 07 · The one rule that fixes shaky video</p>
+    </section>
+
+    <!-- 24 CAPTURE MORE -->
+    <section class="slide statement dark" id="slide-24">
+      <div class="slide-num">24 / 29</div>
+      <p data-reveal data-delay="1" class="statement-text">Capture <em>more</em> than you think you need.</p>
+      <p data-reveal data-delay="3" class="statement-attribution">— Tactics 08 · Ten seconds of footage beats two. Three angles beat one.</p>
+    </section>
+
+    <!-- 25 THUMB-STOP TEST -->
+    <section class="slide statement blue" id="slide-25">
+      <div class="slide-num">25 / 29</div>
+      <p data-reveal data-delay="1" class="statement-text">Before you post — would <em>I</em> stop scrolling for this?</p>
+      <p data-reveal data-delay="3" class="statement-attribution">— The thumb-stop test · Filter #2</p>
+    </section>
+
+    <!-- 26 RECAP -->
+    <section class="slide" id="slide-26">
+      <div class="slide-num">26 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Recap</div>
+      <h2 data-reveal data-delay="2" class="content-headline">Everything you need, on one card.</h2>
+      <div class="recap-grid" style="margin-top: 36px;">
+        <div data-reveal data-delay="3" class="recap-card">
+          <div class="step">Step 01 · Strategy</div>
+          <h3>Why are you posting this?</h3>
+          <ul>
+            <li>Entertaining, educational, or inspirational</li>
+            <li>Who is this for?</li>
+            <li>What's the one thumb-stopping moment?</li>
+          </ul>
+        </div>
+        <div data-reveal data-delay="4" class="recap-card">
+          <div class="step">Step 02 · Tactics</div>
+          <h3>How do you capture it?</h3>
+          <ul>
+            <li>Vertical, always</li>
+            <li>Light on the face, not behind</li>
+            <li>Get close for audio</li>
+            <li>If they move, you're still</li>
+            <li>Capture more than you need</li>
+          </ul>
+        </div>
+        <div data-reveal data-delay="5" class="recap-card">
+          <div class="step">Step 03 · The two filters</div>
+          <h3>Before you post.</h3>
+          <ul>
+            <li>If I didn't know this kid, would I stop scrolling?</li>
+            <li>Would I stop scrolling — period?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 27 AFTER YOU CAPTURE -->
+    <section class="slide" id="slide-27">
+      <div class="slide-num">27 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Before you post · 3 quick checks</div>
+      <h2 data-reveal data-delay="2" class="content-headline">Three things to do after you've captured.</h2>
+      <div class="ordered-grid" style="margin-top: 36px;">
+        <div data-reveal data-delay="3" class="ordered-item">
+          <div class="ordered-num">01</div>
+          <div class="ordered-text"><b>Trim the boring parts.</b>The first two seconds matter most. Cut the wind-up, start on the strongest moment.</div>
+        </div>
+        <div data-reveal data-delay="4" class="ordered-item">
+          <div class="ordered-num">02</div>
+          <div class="ordered-text"><b>Add captions.</b>Most people watch with the sound off. No captions = no story.</div>
+        </div>
+        <div data-reveal data-delay="5" class="ordered-item">
+          <div class="ordered-num">03</div>
+          <div class="ordered-text"><b>One CTA per post.</b>Sign up. Share. Donate. Tag a friend. Pick one — don't ask for everything at once.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 28 HOMEWORK -->
+    <section class="slide" id="slide-28">
+      <div class="slide-num">28 / 29</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Your homework</div>
+      <h2 data-reveal data-delay="2" class="content-headline">Three moments. <em>One week.</em></h2>
+      <ul class="bullet-list" style="margin-top: 28px;">
+        <li data-reveal data-delay="3"><b>Capture three moments this week</b> using the four signals — a first, a surprise, a contrast, or a real relationship.</li>
+        <li data-reveal data-delay="3"><b>Save three posts that stop your thumb.</b> Ask yourself: was it entertaining, educational, inspirational — or all three?</li>
+        <li data-reveal data-delay="4"><b>Post one of your three moments.</b> Vertical. Captions. Strongest two seconds first. See what happens.</li>
+      </ul>
+    </section>
+
+    <!-- 29 CLOSING -->
+    <section class="slide closing" id="slide-29">
+      <div class="slide-num">29 / 29</div>
+      <div data-reveal data-delay="1" class="closing-eyebrow">The bigger picture</div>
+      <h2 data-reveal data-delay="2" class="closing-headline">These skills <em>don't stay</em> at the club.</h2>
+      <p data-reveal data-delay="3" class="closing-body">Everything you learned today works at your kid's birthday party, your own business, your church newsletter, your family. You're not just a BGC staffer with a phone anymore. You're a storyteller.</p>
+      <p data-reveal data-delay="4" class="closing-cta">Now — <em>questions?</em></p>
+    </section>
+
+  </main>
+  <nav class="nav-dots" aria-label="Slide navigation"></nav>
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const navDotsEl = document.querySelector('.nav-dots');
+    const container = document.querySelector('.snap-container');
+
+    slides.forEach((slide, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'nav-dot';
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => slide.scrollIntoView({ behavior: 'smooth' }));
+      navDotsEl.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.nav-dot');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+          const idx = Array.from(slides).indexOf(entry.target);
+          dots.forEach(d => d.classList.remove('active'));
+          if (dots[idx]) dots[idx].classList.add('active');
+        }
+      });
+    }, { root: container, threshold: 0.5 });
+    slides.forEach(slide => observer.observe(slide));
+
+    function getCurrentSlideIndex() {
+      for (let i = 0; i < slides.length; i++) {
+        const rect = slides[i].getBoundingClientRect();
+        if (rect.top >= -100 && rect.top < window.innerHeight / 2) return i;
+      }
+      return 0;
+    }
+    function goToSlide(idx) {
+      const target = Math.max(0, Math.min(slides.length - 1, idx));
+      slides[target].scrollIntoView({ behavior: 'smooth' });
+    }
+    document.addEventListener('keydown', (e) => {
+      const cur = getCurrentSlideIndex();
+      if (['ArrowDown', 'ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); goToSlide(cur + 1); }
+      else if (['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); goToSlide(cur - 1); }
+      else if (e.key === 'Home') { e.preventDefault(); goToSlide(0); }
+      else if (e.key === 'End') { e.preventDefault(); goToSlide(slides.length - 1); }
+      else if (/^[1-9]$/.test(e.key)) { e.preventDefault(); goToSlide(parseInt(e.key, 10) - 1); }
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { root: container, threshold: 0.2 });
+    document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
