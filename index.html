@@ -394,6 +394,50 @@
       border: 0;
     }
 
+    .hooks-grid.showcase {
+      max-width: 880px;
+      gap: 60px;
+    }
+    .hooks-grid.showcase .hook-card {
+      align-items: center;
+      gap: 14px;
+    }
+    .hooks-grid.showcase .hook-label {
+      align-self: stretch;
+      text-align: left;
+    }
+    .hooks-grid.showcase .hook-embed {
+      max-width: 360px;
+    }
+    .hooks-grid.showcase .hook-embed iframe {
+      height: 640px;
+    }
+    .hook-tactics {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-width: 460px;
+    }
+    .hook-tactics li {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--ink-soft);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .hook-tactics li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--bgc-blue);
+      font-weight: 600;
+    }
+
     /* ---- VENN ---- */
     .venn-wrap {
       display: flex; align-items: center; justify-content: center;
@@ -790,7 +834,7 @@
     <section class="slide cover" id="slide-01">
       <div class="cover-img"></div>
       <div class="cover-overlay"></div>
-      <div class="slide-num">01 / 25</div>
+      <div class="slide-num">01 / 26</div>
       <div class="cover-content">
         <div data-reveal data-delay="1" class="cover-eyebrow">Staff training · Boys &amp; Girls Clubs of the Permian Basin</div>
         <div>
@@ -805,7 +849,7 @@
 
     <!-- 02 WHAT WE'LL COVER TODAY -->
     <section class="slide" id="slide-02">
-      <div class="slide-num">02 / 25</div>
+      <div class="slide-num">02 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">What we'll cover today</div>
       <h2 data-reveal data-delay="2" class="content-headline">Two things: <em>strategy,</em> then tactics.</h2>
       <p data-reveal data-delay="3" class="content-body" style="margin-top: 8px;">There are a hundred things you could learn about content. Today we're giving you the <em>twenty percent</em> that gets you eighty percent of the results.</p>
@@ -825,7 +869,7 @@
 
     <!-- 03 AUTHORITY -->
     <section class="slide" id="slide-03">
-      <div class="slide-num">03 / 25</div>
+      <div class="slide-num">03 / 26</div>
       <img data-reveal data-delay="1" src="img/anecdotal-logo.png" alt="Anecdotal Media" class="anecdotal-mark">
       <h2 data-reveal data-delay="2" class="content-headline">We've spent our careers figuring out <em>what makes people care.</em></h2>
       <div class="authority-grid" style="margin-top: 32px;">
@@ -859,7 +903,7 @@
 
     <!-- 04 WHY THIS MATTERS -->
     <section class="slide content-2col" id="slide-04">
-      <div class="slide-num">04 / 25</div>
+      <div class="slide-num">04 / 26</div>
       <div>
         <div data-reveal data-delay="1" class="content-eyebrow">Why this matters</div>
         <h2 data-reveal data-delay="2" class="content-headline" style="font-size: clamp(34px, 4.2vw, 60px);">You're doing amazing work. Midland &amp; Odessa just needs to <em>see</em> it.</h2>
@@ -876,7 +920,7 @@
 
     <!-- 05 YOU ARE THE CAMERA CREW -->
     <section class="slide content-2col flip" id="slide-05">
-      <div class="slide-num">05 / 25</div>
+      <div class="slide-num">05 / 26</div>
       <div>
         <div data-reveal data-delay="1" class="content-eyebrow">Why you</div>
         <h2 data-reveal data-delay="2" class="content-headline">You are the <em>camera crew</em> now.</h2>
@@ -889,7 +933,7 @@
 
     <!-- 06 E/E/I -->
     <section class="slide" id="slide-06">
-      <div class="slide-num">06 / 25</div>
+      <div class="slide-num">06 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">Strategy 01</div>
       <h2 data-reveal data-delay="2" class="content-headline">Why does anyone watch <em>anything</em> on social?</h2>
       <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 24px;">Three reasons. That's it.</p>
@@ -916,7 +960,7 @@
 
     <!-- 07 VENN -->
     <section class="slide" id="slide-07">
-      <div class="slide-num">07 / 25</div>
+      <div class="slide-num">07 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">The overlap</div>
       <h2 data-reveal data-delay="2" class="content-headline">The best posts hit <em>two or three</em> at once.</h2>
       <div class="venn-wrap" data-reveal data-delay="3">
@@ -945,30 +989,58 @@
 
     <!-- 08 PAY ATTENTION TO YOUR SCROLL -->
     <section class="slide statement blue" id="slide-08">
-      <div class="slide-num">08 / 25</div>
+      <div class="slide-num">08 / 26</div>
       <p data-reveal data-delay="1" class="statement-text">The next time you scroll social media, pay attention to <em>what stops your scroll.</em></p>
       <p data-reveal data-delay="3" class="statement-attribution">— Start tonight.</p>
     </section>
 
 
 
-    <!-- 09 HOOKS -->
+    <!-- 09 HOOKS — DEFINED -->
     <section class="slide" id="slide-09">
-      <div class="slide-num">09 / 25</div>
+      <div class="slide-num">09 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">Strategy 02 · Hooks</div>
       <h2 data-reveal data-delay="2" class="content-headline" style="font-size: clamp(36px, 4.4vw, 60px); margin-bottom: 16px;">Earn the next <em>three seconds.</em></h2>
-      <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 20px; max-width: 880px;">If the first 1–3 seconds don't grab them, the rest doesn't matter. Two ways to land it:</p>
+      <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 28px; max-width: 880px;">If the first 1–3 seconds don't grab them, the rest doesn't matter. Two ways to land it:</p>
       <div class="hooks-grid">
         <div data-reveal data-delay="4" class="hook-card">
           <div class="hook-label">Visual hook</div>
-          <p class="hook-desc">Something <em>interesting happening</em> right away — motion, a few quick cuts, a reveal. The eye stops because something is moving in a way it didn't expect.</p>
-          <div class="hook-embed">
-            <iframe src="https://www.instagram.com/reel/DXHpi8tjJEr/embed/" allowtransparency="true" allowfullscreen scrolling="no"></iframe>
-          </div>
+          <p class="hook-desc"><em>Something interesting happening</em> right away — motion, a reveal, a surprise. The eye stops because something is moving in a way it didn't expect.</p>
+          <p class="hook-desc" style="font-size:14px; opacity:0.85; margin-top:-2px;"><strong style="font-weight:600; color: var(--ink);">Why it works:</strong> the brain notices motion and novelty before it processes meaning.</p>
+          <ul class="hook-tactics">
+            <li>Open mid-action — a kid mid-jump, mid-laugh, mid-swing</li>
+            <li>Quick cuts — 3+ shots in the first 2 seconds</li>
+            <li>An unexpected angle, location, or face direct-to-camera</li>
+          </ul>
         </div>
         <div data-reveal data-delay="5" class="hook-card">
           <div class="hook-label">Curiosity hook</div>
           <p class="hook-desc">Open a <em>loop in their head</em> and don't close it right away. A question, a setup, a tease — the brain stays for the answer.</p>
+          <p class="hook-desc" style="font-size:14px; opacity:0.85; margin-top:-2px;"><strong style="font-weight:600; color: var(--ink);">Why it works:</strong> an unanswered question creates a tension the brain wants to resolve.</p>
+          <ul class="hook-tactics">
+            <li>Ask something you don't answer until the end</li>
+            <li>Tease a number — "3 things you didn't know about…"</li>
+            <li>Set the stakes up front — "She'd never picked up a ball until this week."</li>
+          </ul>
+        </div>
+      </div>
+      <p data-reveal data-delay="6" class="content-body" style="margin-top: 24px; font-size: 14px; opacity: 0.7;">Two examples on the next slide ↓</p>
+    </section>
+
+    <!-- 10 HOOKS — IN PRACTICE -->
+    <section class="slide" id="slide-10">
+      <div class="slide-num">10 / 26</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Strategy 02 · In practice</div>
+      <h2 data-reveal data-delay="2" class="content-headline" style="font-size: clamp(32px, 3.8vw, 50px); margin-bottom: 28px;">Here's what they look like <em>in the wild.</em></h2>
+      <div class="hooks-grid showcase">
+        <div data-reveal data-delay="3" class="hook-card">
+          <div class="hook-label">Visual hook</div>
+          <div class="hook-embed">
+            <iframe src="https://www.instagram.com/reel/DXHpi8tjJEr/embed/" allowtransparency="true" allowfullscreen scrolling="no"></iframe>
+          </div>
+        </div>
+        <div data-reveal data-delay="4" class="hook-card">
+          <div class="hook-label">Curiosity hook</div>
           <div class="hook-embed">
             <iframe src="https://www.instagram.com/reel/DWZKSdDDl6F/embed/" allowtransparency="true" allowfullscreen scrolling="no"></iframe>
           </div>
@@ -978,38 +1050,39 @@
 
 
 
-    <!-- 10 OUTSIDER LENS TEST -->
-    <section class="slide statement dark" id="slide-10">
-      <div class="slide-num">10 / 25</div>
+    <!-- 11 OUTSIDER LENS TEST -->
+    <section class="slide statement dark" id="slide-11">
+      <div class="slide-num">11 / 26</div>
       <p data-reveal data-delay="1" class="statement-attribution" style="margin-top:0;margin-bottom:32px;font-style:italic;letter-spacing:0.06em;text-transform:none;font-size:22px;font-weight:400;opacity:0.85;">The question to ask yourself is this…</p>
       <p data-reveal data-delay="2" class="statement-text">If you didn't <em>know</em> this kid — would you stop scrolling?</p>
     </section>
 
 
 
-    <!-- 11 TWO QUESTIONS -->
-    <section class="slide" id="slide-11">
-      <div class="slide-num">11 / 25</div>
-      <div data-reveal data-delay="1" class="content-eyebrow">Strategy 02 · Before you press record</div>
-      <h2 data-reveal data-delay="2" class="content-headline">Two questions, every time.</h2>
-      <div class="ordered-grid" style="margin-top: 36px;">
-        <div data-reveal data-delay="3" class="ordered-item">
-          <div class="ordered-num">01</div>
-          <div class="ordered-text"><b>Who is this for?</b>A working mom. A donor. A teenager. A volunteer. Pick one — content built for everyone reaches no one.</div>
-        </div>
+    <!-- 12 SEE IT COMING -->
+    <section class="slide" id="slide-12">
+      <div class="slide-num">12 / 26</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Strategy 03 · The reflex</div>
+      <h2 data-reveal data-delay="2" class="content-headline">See it <em>coming.</em></h2>
+      <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 20px; max-width: 1000px;">The best moments don't announce themselves. They build, they peak, they dissolve — in seconds. If you wait until one is fully happening before you raise the camera, half of it is already gone. The job is to feel them coming.</p>
+      <div class="ordered-grid" style="margin-top: 24px;">
         <div data-reveal data-delay="4" class="ordered-item">
+          <div class="ordered-num">01</div>
+          <div class="ordered-text"><b>A reflex, not a checklist.</b>You learn to sense the setup — the lean-in, the laugh starting, the first bite — and the phone comes up in the same beat.</div>
+        </div>
+        <div data-reveal data-delay="5" class="ordered-item">
           <div class="ordered-num">02</div>
-          <div class="ordered-text"><b>Did this moment just make <em>me</em> feel something?</b>Surprise, laughter, pride, lump-in-throat. That feeling is the signal. Train the instinct — when you notice it, the phone comes out automatically. If it moved you, it'll move someone else.</div>
+          <div class="ordered-text"><b>A muscle, not a rule.</b>You'll miss most of them at first. Then one day you'll find yourself recording before you've thought about why. That's when it's wired.</div>
         </div>
       </div>
     </section>
 
 
 
-    <!-- 12 FOUR SIGNALS -->
-    <section class="slide" id="slide-12">
-      <div class="slide-num">12 / 25</div>
-      <div data-reveal data-delay="1" class="content-eyebrow">Strategy 03 · Spot the story</div>
+    <!-- 13 FOUR SIGNALS -->
+    <section class="slide" id="slide-13">
+      <div class="slide-num">13 / 26</div>
+      <div data-reveal data-delay="1" class="content-eyebrow">Strategy 04 · Spot the story</div>
       <h2 data-reveal data-delay="2" class="content-headline">Four signals to <em>stay alert</em> for.</h2>
       <div class="ordered-grid" style="margin-top: 36px;">
         <div data-reveal data-delay="3" class="ordered-item">
@@ -1033,9 +1106,9 @@
 
 
 
-    <!-- 13 BEYOND POSED PHOTOS -->
-    <section class="slide content-2col" id="slide-13">
-      <div class="slide-num">13 / 25</div>
+    <!-- 14 BEYOND POSED PHOTOS -->
+    <section class="slide content-2col" id="slide-14">
+      <div class="slide-num">14 / 26</div>
       <div>
         <div data-reveal data-delay="1" class="content-eyebrow">Tactics 01</div>
         <h2 data-reveal data-delay="2" class="content-headline">Think <em>beyond</em> the posed photo.</h2>
@@ -1046,9 +1119,9 @@
 
 
 
-    <!-- 14 GET CLOSE -->
-    <section class="slide content-2col flip" id="slide-14">
-      <div class="slide-num">14 / 25</div>
+    <!-- 15 GET CLOSE -->
+    <section class="slide content-2col flip" id="slide-15">
+      <div class="slide-num">15 / 26</div>
       <div>
         <div data-reveal data-delay="1" class="content-eyebrow">Tactics 02</div>
         <h2 data-reveal data-delay="2" class="content-headline">Get in <em>close.</em> Tighter than feels comfortable.</h2>
@@ -1059,9 +1132,9 @@
 
 
 
-    <!-- 15 VERTICAL -->
-    <section class="slide" id="slide-15">
-      <div class="slide-num">15 / 25</div>
+    <!-- 16 VERTICAL -->
+    <section class="slide" id="slide-16">
+      <div class="slide-num">16 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">Tactics 03</div>
       <h2 data-reveal data-delay="2" class="content-headline">Shoot <em>vertical.</em></h2>
       <p data-reveal data-delay="3" class="content-body" style="max-width: 820px;">TikTok, Reels, Stories, Shorts — every platform that matters lives in 9:16. Horizontal video posted to vertical platforms gets cropped, ignored, or stuffed into a tiny postage stamp. The only exception is YouTube proper — the long-form, full-screen kind. Everywhere else, turn the phone.</p>
@@ -1082,9 +1155,9 @@
 
 
 
-    <!-- 16 LIGHTING -->
-    <section class="slide" id="slide-16">
-      <div class="slide-num">16 / 25</div>
+    <!-- 17 LIGHTING -->
+    <section class="slide" id="slide-17">
+      <div class="slide-num">17 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">Tactics 03</div>
       <h2 data-reveal data-delay="2" class="content-headline">Lighting in <em>thirty seconds.</em></h2>
       <ul class="bullet-list">
@@ -1097,9 +1170,9 @@
 
 
 
-    <!-- 17 AUDIO -->
-    <section class="slide" id="slide-17">
-      <div class="slide-num">17 / 25</div>
+    <!-- 18 AUDIO -->
+    <section class="slide" id="slide-18">
+      <div class="slide-num">18 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">Tactics 04</div>
       <h2 data-reveal data-delay="2" class="content-headline">Audio is the <em>biggest difference</em> between amateur and pro.</h2>
       <ul class="bullet-list">
@@ -1112,9 +1185,9 @@
 
 
 
-    <!-- 18 PAIR WITH B-ROLL -->
-    <section class="slide" id="slide-18">
-      <div class="slide-num">18 / 25</div>
+    <!-- 19 PAIR WITH B-ROLL -->
+    <section class="slide" id="slide-19">
+      <div class="slide-num">19 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">Tactics 05 · Pair with b-roll</div>
       <h2 data-reveal data-delay="2" class="content-headline">Let them tell. Then <em>show what they're describing.</em></h2>
       <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 28px;">A talking-head video by itself is a podcast on screen. The same testimonial, intercut with footage of the actual thing they're talking about, becomes a story.</p>
@@ -1127,27 +1200,27 @@
 
 
 
-    <!-- 19 CAPTURE MORE -->
-    <section class="slide statement dark" id="slide-19">
-      <div class="slide-num">19 / 25</div>
+    <!-- 20 CAPTURE MORE -->
+    <section class="slide statement dark" id="slide-20">
+      <div class="slide-num">20 / 26</div>
       <p data-reveal data-delay="1" class="statement-text">Capture <em>more</em> than you think you need.</p>
       <p data-reveal data-delay="3" class="statement-attribution">— Tactics 08 · Ten seconds of footage beats two. Three angles beat one.</p>
     </section>
 
 
 
-    <!-- 20 THUMB-STOP TEST -->
-    <section class="slide statement blue" id="slide-20">
-      <div class="slide-num">20 / 25</div>
+    <!-- 21 THUMB-STOP TEST -->
+    <section class="slide statement blue" id="slide-21">
+      <div class="slide-num">21 / 26</div>
       <p data-reveal data-delay="1" class="statement-text">Before you post — would <em>I</em> stop scrolling for this?</p>
       <p data-reveal data-delay="3" class="statement-attribution">— The thumb-stop test · Filter #2</p>
     </section>
 
 
 
-    <!-- 21 RECAP -->
-    <section class="slide" id="slide-21">
-      <div class="slide-num">21 / 25</div>
+    <!-- 22 RECAP -->
+    <section class="slide" id="slide-22">
+      <div class="slide-num">22 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">Recap</div>
       <h2 data-reveal data-delay="2" class="content-headline">Everything you need, on one card.</h2>
       <div class="recap-grid" style="margin-top: 36px;">
@@ -1184,9 +1257,9 @@
 
 
 
-    <!-- 22 WHAT TO AVOID -->
-    <section class="slide" id="slide-22">
-      <div class="slide-num">22 / 25</div>
+    <!-- 23 WHAT TO AVOID -->
+    <section class="slide" id="slide-23">
+      <div class="slide-num">23 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">Common pitfalls</div>
       <h2 data-reveal data-delay="2" class="content-headline">A quick gallery of <em>"don't."</em></h2>
       <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 28px; max-width: 880px;">Spot any of these in your own posts? Take it down and try again.</p>
@@ -1226,9 +1299,9 @@
 
 
 
-    <!-- 23 AFTER YOU CAPTURE -->
-    <section class="slide" id="slide-23">
-      <div class="slide-num">23 / 25</div>
+    <!-- 24 AFTER YOU CAPTURE -->
+    <section class="slide" id="slide-24">
+      <div class="slide-num">24 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">After you capture · Edit</div>
       <h2 data-reveal data-delay="2" class="content-headline">Make every second <em>count.</em></h2>
       <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 16px; max-width: 880px;">Two moves in the edit. That's it.</p>
@@ -1246,9 +1319,9 @@
 
 
 
-    <!-- 24 HOMEWORK -->
-    <section class="slide" id="slide-24">
-      <div class="slide-num">24 / 25</div>
+    <!-- 25 HOMEWORK -->
+    <section class="slide" id="slide-25">
+      <div class="slide-num">25 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">Your homework</div>
       <h2 data-reveal data-delay="2" class="content-headline">Three moments. <em>One week.</em></h2>
       <ul class="bullet-list" style="margin-top: 28px;">
@@ -1260,9 +1333,9 @@
 
 
 
-    <!-- 25 CLOSING -->
-    <section class="slide closing" id="slide-25">
-      <div class="slide-num">25 / 25</div>
+    <!-- 26 CLOSING -->
+    <section class="slide closing" id="slide-26">
+      <div class="slide-num">26 / 26</div>
       <div data-reveal data-delay="1" class="closing-eyebrow">The bigger picture</div>
       <h2 data-reveal data-delay="2" class="closing-headline">These skills <em>don't stay</em> at the club.</h2>
       <p data-reveal data-delay="3" class="closing-body">Everything you learned today works at your kid's birthday party, your own business, your church newsletter, your family. You're not just a BGC staffer with a phone anymore. You're a storyteller.</p>

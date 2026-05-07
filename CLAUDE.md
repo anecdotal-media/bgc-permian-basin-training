@@ -37,8 +37,8 @@ A 1-hour live training deck for Boys & Girls Clubs of the Permian Basin staff. C
 | 8 | Pay attention to your scroll | "The next time you scroll social media, pay attention to what stops your scroll." — Start tonight. |
 | 9 | **Hooks** | Strategy 02 — visual hook + curiosity hook, two Instagram reel embeds (DXHpi8tjJEr, DWZKSdDDl6F) |
 | 10 | Outsider lens | "The question to ask yourself is this…" + "If you didn't know this kid — would you stop scrolling?" |
-| 11 | Two questions before you press record | Who is this for? + Did this moment make ME feel something? |
-| 12 | Four signals to spot a story | First / surprise / contrast / real relationship |
+| 11 | *"See it coming."* — train the reflex | Strategy 03 · Recognize moments as they're happening or about to happen. Two cards: reflex-not-checklist + muscle-not-rule. Sets up slide 12. |
+| 12 | Four signals to spot a story | Strategy 04. First / surprise / contrast / real relationship |
 | 13 | Beyond posed photos | |
 | 14 | Get close | Tighter than feels comfortable |
 | 15 | Shoot vertical | (almost) always — YouTube long-form is the exception |
