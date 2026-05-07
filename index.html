@@ -365,23 +365,29 @@
     /* ---- BRAND WALL (authority slide) ---- */
     .brand-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
       margin-top: 20px;
-      max-width: 660px;
+      max-width: 720px;
     }
     .brand-tile {
-      padding: 16px 14px;
+      padding: 12px 14px;
       background: var(--warm-white);
       border: 1px solid var(--rule);
       border-radius: 4px;
-      text-align: center;
-      font-family: var(--sans);
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.05em;
-      color: var(--ink);
-      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 68px;
+    }
+    .brand-tile img {
+      max-height: 40px;
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      filter: grayscale(1) contrast(1.05);
+      opacity: 0.88;
     }
     .anecdotal-mark {
       display: block;
@@ -711,12 +717,14 @@
         <div data-reveal data-delay="3">
           <p class="content-body" style="margin-bottom: 22px;">Producers, marketers, and storytellers. We've built audiences for brands you've heard of — and one of TikTok's largest accounts on the psychology of attention along the way.</p>
           <div class="brand-row">
-            <div class="brand-tile">Nike</div>
-            <div class="brand-tile">Google</div>
-            <div class="brand-tile">Deadliest Catch</div>
-            <div class="brand-tile">Sea Cadets</div>
-            <div class="brand-tile">Texas Hearing<br>Institute</div>
-            <div class="brand-tile">United Way</div>
+            <div class="brand-tile"><img src="img/brands/nike.svg" alt="Nike"></div>
+            <div class="brand-tile"><img src="img/brands/google.svg" alt="Google"></div>
+            <div class="brand-tile"><img src="img/brands/usopc.svg" alt="US Olympic &amp; Paralympic Committee"></div>
+            <div class="brand-tile"><img src="img/brands/jaguars.svg" alt="Jacksonville Jaguars"></div>
+            <div class="brand-tile"><img src="img/brands/deadliest-catch.png" alt="Deadliest Catch"></div>
+            <div class="brand-tile"><img src="img/brands/sea-cadets.svg" alt="US Naval Sea Cadet Corps"></div>
+            <div class="brand-tile"><img src="img/brands/united-way.svg" alt="United Way"></div>
+            <div class="brand-tile"><img src="img/brands/texas-hearing.png" alt="Texas Hearing Institute"></div>
           </div>
         </div>
         <div data-reveal data-delay="4" class="auth-stats">
@@ -738,7 +746,7 @@
       <div class="slide-num">04 / 26</div>
       <div>
         <div data-reveal data-delay="1" class="content-eyebrow">Why this matters</div>
-        <h2 data-reveal data-delay="2" class="content-headline">You're doing amazing work. The rest of Midland &amp; Odessa just needs to <em>see</em> it.</h2>
+        <h2 data-reveal data-delay="2" class="content-headline" style="font-size: clamp(34px, 4.2vw, 60px);">You're doing amazing work. Midland &amp; Odessa just needs to <em>see</em> it.</h2>
         <ul class="bullet-list" style="margin-top: 8px;">
           <li data-reveal data-delay="3">Parents want to see what their kids actually do here every afternoon</li>
           <li data-reveal data-delay="3">Donors want to see the transformations their dollars are funding</li>
