@@ -350,11 +350,14 @@
     /* ---- HOOKS GRID (slide 09) ---- */
     .hooks-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 32px;
       width: 100%;
-      max-width: 1100px;
+      max-width: 1300px;
       align-items: start;
+    }
+    .hooks-grid.showcase {
+      grid-template-columns: 1fr 1fr;
     }
     .hook-card {
       display: flex;
@@ -698,38 +701,56 @@
       margin-top: 16px;
     }
     .recap-card {
-      padding: 36px 28px;
+      padding: 32px 28px 28px;
       background: var(--warm-white);
       border-top: 4px solid var(--bgc-blue);
       border-radius: 0 0 6px 6px;
+      display: flex;
+      flex-direction: column;
+    }
+    .recap-card .num {
+      font-family: var(--display);
+      font-size: 92px;
+      line-height: 0.85;
+      color: var(--bgc-blue);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
     }
     .recap-card .step {
       font-family: var(--sans);
       font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 0.25em;
+      font-size: 11px;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: var(--bgc-blue);
-      margin-bottom: 14px;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
     }
     .recap-card h3 {
       font-family: var(--sans);
       font-weight: 700;
-      font-size: 22px;
-      letter-spacing: -0.01em;
-      margin-bottom: 12px;
+      font-size: 34px;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+      margin-bottom: 18px;
       color: var(--ink);
     }
-    .recap-card ul { list-style: none; }
-    .recap-card li {
+    .recap-card .recap-line {
+      font-family: var(--sans);
       font-size: 15px;
       font-weight: 400;
-      line-height: 1.5;
-      color: var(--ink-soft);
-      padding: 6px 0;
-      border-bottom: 1px dashed var(--rule);
+      line-height: 1.45;
+      color: var(--ink);
+      padding: 12px 0;
+      border-top: 1px solid var(--rule);
     }
-    .recap-card li:last-child { border-bottom: none; }
+    .recap-card .recap-line:first-of-type {
+      border-top: 0;
+      padding-top: 4px;
+    }
+    .recap-card .recap-line strong {
+      font-weight: 700;
+      color: var(--bgc-blue);
+    }
 
     /* ---- CLOSING ---- */
     .slide.closing {
@@ -1001,30 +1022,46 @@
       <div class="slide-num">09 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">Strategy 02 · Hooks</div>
       <h2 data-reveal data-delay="2" class="content-headline" style="font-size: clamp(36px, 4.4vw, 60px); margin-bottom: 16px;">Earn the next <em>three seconds.</em></h2>
-      <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 28px; max-width: 880px;">If the first 1–3 seconds don't grab them, the rest doesn't matter. Two ways to land it:</p>
+      <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 24px; max-width: 880px;">If the first 1–3 seconds don't grab them, the rest doesn't matter. Four ways to land it:</p>
       <div class="hooks-grid">
         <div data-reveal data-delay="4" class="hook-card">
-          <div class="hook-label">Visual hook</div>
-          <p class="hook-desc"><em>Something interesting happening</em> right away — motion, a reveal, a surprise. The eye stops because something is moving in a way it didn't expect.</p>
-          <p class="hook-desc" style="font-size:14px; opacity:0.85; margin-top:-2px;"><strong style="font-weight:600; color: var(--ink);">Why it works:</strong> the brain notices motion and novelty before it processes meaning.</p>
+          <div class="hook-label">Visual</div>
+          <p class="hook-desc"><em>Something interesting happening</em> in the frame. The eye stops because something is moving in a way it didn't expect.</p>
           <ul class="hook-tactics">
-            <li>Open mid-action — a kid mid-jump, mid-laugh, mid-swing</li>
-            <li>Quick cuts — 3+ shots in the first 2 seconds</li>
-            <li>An unexpected angle, location, or face direct-to-camera</li>
+            <li>Open mid-action</li>
+            <li>Quick cuts in the first 2 seconds</li>
+            <li>An unexpected angle</li>
+          </ul>
+        </div>
+        <div data-reveal data-delay="4" class="hook-card">
+          <div class="hook-label">Curiosity</div>
+          <p class="hook-desc">Open a <em>loop in their head</em> and don't close it right away. The brain stays for the answer.</p>
+          <ul class="hook-tactics">
+            <li>Tease a number — "3 things you didn't know about…"</li>
+            <li>Set up stakes — "She'd never picked up a ball until this week."</li>
+            <li>Pay it off at the end, not the start</li>
           </ul>
         </div>
         <div data-reveal data-delay="5" class="hook-card">
-          <div class="hook-label">Curiosity hook</div>
-          <p class="hook-desc">Open a <em>loop in their head</em> and don't close it right away. A question, a setup, a tease — the brain stays for the answer.</p>
-          <p class="hook-desc" style="font-size:14px; opacity:0.85; margin-top:-2px;"><strong style="font-weight:600; color: var(--ink);">Why it works:</strong> an unanswered question creates a tension the brain wants to resolve.</p>
+          <div class="hook-label">Statement</div>
+          <p class="hook-desc">Just <em>say what's happening</em>, plainly, in the first second. Sets the expectation. The right viewer stays.</p>
           <ul class="hook-tactics">
-            <li>Ask something you don't answer until the end</li>
-            <li>Tease a number — "3 things you didn't know about…"</li>
-            <li>Set the stakes up front — "She'd never picked up a ball until this week."</li>
+            <li>"Today we're doing free-throw practice."</li>
+            <li>"This is what an after-school tutoring session looks like."</li>
+            <li>Cut to the action immediately</li>
+          </ul>
+        </div>
+        <div data-reveal data-delay="5" class="hook-card">
+          <div class="hook-label">Question</div>
+          <p class="hook-desc">Pose a question <em>directly to the viewer</em>, like you're talking one-on-one. Pulls them into the answer.</p>
+          <ul class="hook-tactics">
+            <li>"Have you ever heard of…?"</li>
+            <li>"Did you know that…?"</li>
+            <li>Don't answer until you've shown them why they should care</li>
           </ul>
         </div>
       </div>
-      <p data-reveal data-delay="6" class="content-body" style="margin-top: 24px; font-size: 14px; opacity: 0.7;">Two examples on the next slide ↓</p>
+      <p data-reveal data-delay="6" class="content-body" style="margin-top: 22px; font-size: 14px; opacity: 0.7;">Two examples on the next slide ↓</p>
     </section>
 
     <!-- 10 HOOKS — IN PRACTICE -->
@@ -1204,7 +1241,8 @@
     <section class="slide statement dark" id="slide-20">
       <div class="slide-num">20 / 26</div>
       <p data-reveal data-delay="1" class="statement-text">Capture <em>more</em> than you think you need.</p>
-      <p data-reveal data-delay="3" class="statement-attribution">— Tactics 08 · Ten seconds of footage beats two. Three angles beat one.</p>
+      <p data-reveal data-delay="3" class="statement-text" style="margin-top: 24px; font-size: clamp(28px, 3.6vw, 48px); opacity: 0.78;">Then post <em>way less.</em></p>
+      <p data-reveal data-delay="4" class="statement-attribution">— Tactics 08 · Ten angles beat one. The best four seconds beat the whole forty.</p>
     </section>
 
 
@@ -1223,34 +1261,30 @@
       <div class="slide-num">22 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">Recap</div>
       <h2 data-reveal data-delay="2" class="content-headline">Everything you need, on one card.</h2>
-      <div class="recap-grid" style="margin-top: 36px;">
+      <div class="recap-grid" style="margin-top: 28px;">
         <div data-reveal data-delay="3" class="recap-card">
-          <div class="step">Step 01 · Strategy</div>
-          <h3>Why are you posting this?</h3>
-          <ul>
-            <li>Entertaining, educational, or inspirational</li>
-            <li>Who is this for?</li>
-            <li>What's the one thumb-stopping moment?</li>
-          </ul>
+          <div class="num">01</div>
+          <div class="step">Strategy</div>
+          <h3>Why post this?</h3>
+          <div class="recap-line"><strong>E · E · I</strong> — at least one</div>
+          <div class="recap-line">For <strong>one</strong> specific person</div>
+          <div class="recap-line"><strong>One</strong> thumb-stopping moment</div>
         </div>
         <div data-reveal data-delay="4" class="recap-card">
-          <div class="step">Step 02 · Tactics</div>
-          <h3>How do you capture it?</h3>
-          <ul>
-            <li>Get in close — tighter than feels comfortable</li>
-            <li>Shoot vertical (almost) always</li>
-            <li>Light on the face, not behind</li>
-            <li>Get close for audio</li>
-            <li>Capture more than you need</li>
-          </ul>
+          <div class="num">02</div>
+          <div class="step">Tactics</div>
+          <h3>How to capture?</h3>
+          <div class="recap-line"><strong>Close.</strong> Vertical. Lit. Audible.</div>
+          <div class="recap-line"><strong>Capture more</strong> than you think you need</div>
+          <div class="recap-line"><strong>Post way less</strong> than you captured</div>
         </div>
         <div data-reveal data-delay="5" class="recap-card">
-          <div class="step">Step 03 · The two filters</div>
-          <h3>Before you post.</h3>
-          <ul>
-            <li>If I didn't know this kid, would I stop scrolling?</li>
-            <li>Would I stop scrolling — period?</li>
-          </ul>
+          <div class="num">03</div>
+          <div class="step">Filters</div>
+          <h3>Worth posting?</h3>
+          <div class="recap-line"><strong>Did it stop me?</strong></div>
+          <div class="recap-line"><strong>Would it stop a stranger</strong> who doesn't know this kid?</div>
+          <div class="recap-line" style="opacity:0.5; font-style:italic;">If yes to both → post.</div>
         </div>
       </div>
     </section>
@@ -1304,15 +1338,15 @@
       <div class="slide-num">24 / 26</div>
       <div data-reveal data-delay="1" class="content-eyebrow">After you capture · Edit</div>
       <h2 data-reveal data-delay="2" class="content-headline">Make every second <em>count.</em></h2>
-      <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 16px; max-width: 880px;">Two moves in the edit. That's it.</p>
+      <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 16px; max-width: 880px;">Attention spans are short. Two moves in the edit:</p>
       <div class="ordered-grid" style="margin-top: 28px;">
         <div data-reveal data-delay="4" class="ordered-item">
           <div class="ordered-num">01</div>
-          <div class="ordered-text"><b>Remove.</b>Cut the wind-up. Cut the dead air. Cut the part where nothing's happening yet. Lead with the strongest second — get out before they scroll.</div>
+          <div class="ordered-text"><b>Cut the wind-up.</b>Don't open with "ok…" or "and we're rolling…" Trim until the video starts on the strongest second. If they speak, start when they start. Get in. Get out. Get scrolled-past less.</div>
         </div>
         <div data-reveal data-delay="5" class="ordered-item">
           <div class="ordered-num">02</div>
-          <div class="ordered-text"><b>Add captions.</b>Most people watch with the sound off. No captions = no story. Most apps will auto-caption — sweep through and fix the misheard words.</div>
+          <div class="ordered-text"><b>One CTA per post.</b>Sign up. Share. Donate. Tag a friend. Pick <em>one</em> — don't ask for everything at once. A post with three asks gets zero of them.</div>
         </div>
       </div>
     </section>

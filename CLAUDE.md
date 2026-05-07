@@ -35,7 +35,7 @@ A 1-hour live training deck for Boys & Girls Clubs of the Permian Basin staff. C
 | 6 | E/E/I framework | 3-card. Cards step in one-at-a-time on forward keypress (`[data-step]`) |
 | 7 | Magic Venn | All three labels inside their circles. Callout outside on right with curved SVG arrow into centroid |
 | 8 | Pay attention to your scroll | "The next time you scroll social media, pay attention to what stops your scroll." — Start tonight. |
-| 9 | **Hooks — defined** | Strategy 02. Two-column concept slide: Visual hook + Curiosity hook with "why it works" + tactics list (`.hook-tactics`). NO embeds — they live on slide 10. |
+| 9 | **Hooks — defined** | Strategy 02. Four-column concept slide: Visual / Curiosity / Statement / Question, each with a one-line description + 3 tactic bullets. NO embeds — they live on slide 10. |
 | 10 | **Hooks — in the wild** | Strategy 02 · In practice. Just the two Instagram reel embeds side-by-side with `.hooks-grid.showcase` (iframe height 640px). Reels: DXHpi8tjJEr (visual), DWZKSdDDl6F (curiosity). |
 | 11 | Outsider lens | "The question to ask yourself is this…" + "If you didn't know this kid — would you stop scrolling?" |
 | 12 | *"See it coming."* — train the reflex | Strategy 03 · Recognize moments as they're happening or about to happen. Two cards: reflex-not-checklist + muscle-not-rule. Sets up slide 13. |
@@ -46,11 +46,11 @@ A 1-hour live training deck for Boys & Girls Clubs of the Permian Basin staff. C
 | 17 | Lighting | |
 | 18 | Audio | |
 | 19 | Pair testimonial with b-roll | (Mug-shot-vs-conversation slide above it was removed in earlier revision) |
-| 20 | Capture more than you need | |
+| 20 | Capture more than you need | Two-line statement: capture more / post way less |
 | 21 | Thumb-stop test | "Would I stop scrolling for this?" |
-| 22 | Recap card | 3 columns: Strategy / Tactics / Two filters |
+| 22 | Recap card | 3 columns with big Anton numerals + distilled tag-lines (no bullet lists). Strategy / Tactics / Filters |
 | 23 | **What to avoid** | 6-card pitfalls gallery (press release / backlit selfie / super-wide / slow start / far-away mic / dim room) |
-| 24 | After you capture — *"Make every second count."* | Two moves: Remove + Add captions |
+| 24 | After you capture — *"Make every second count."* | Two moves: Cut the wind-up + One CTA per post. (Captions intentionally dropped — Al's A/B testing showed they don't move the needle.) |
 | 25 | Homework | Capture 3 moments / save 3 thumb-stoppers / post one |
 | 26 | Closing — *"These skills don't stay at the club."* | Q&A |
 
