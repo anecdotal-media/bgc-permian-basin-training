@@ -123,6 +123,13 @@
     [data-delay="4"] { transition-delay: 0.52s; }
     [data-delay="5"] { transition-delay: 0.7s; }
 
+    [data-step] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    [data-step].is-revealed { opacity: 1; transform: none; }
+
     /* ---- COVER ---- */
     .slide.cover {
       padding: 0;
@@ -725,7 +732,7 @@
       }
       .slide:last-child { page-break-after: auto; }
       .nav-dots { display: none !important; }
-      [data-reveal] { opacity: 1 !important; transform: none !important; }
+      [data-reveal], [data-step] { opacity: 1 !important; transform: none !important; }
     }
   </style>
 </head>
@@ -840,17 +847,17 @@
       <h2 data-reveal data-delay="2" class="content-headline">Why does anyone watch <em>anything</em> on social?</h2>
       <p data-reveal data-delay="3" class="content-body" style="margin-bottom: 24px;">Three reasons. That's it.</p>
       <div class="three-up">
-        <div data-reveal data-delay="3" class="three-card">
+        <div data-step data-step-order="1" class="three-card">
           <div class="num">01</div>
           <h3>Entertaining</h3>
           <p>Funny, surprising, satisfying. Makes them feel something pleasant in five seconds.</p>
         </div>
-        <div data-reveal data-delay="4" class="three-card">
+        <div data-step data-step-order="2" class="three-card">
           <div class="num">02</div>
           <h3>Educational</h3>
           <p>They learned something they didn't know. Useful, novel, "huh, I didn't know that."</p>
         </div>
-        <div data-reveal data-delay="5" class="three-card">
+        <div data-step data-step-order="3" class="three-card">
           <div class="num">03</div>
           <h3>Inspirational</h3>
           <p>It moved them. Made them want to be better, do better, give more, try harder.</p>
@@ -1264,13 +1271,34 @@
       const target = Math.max(0, Math.min(slides.length - 1, idx));
       slides[target].scrollIntoView({ behavior: 'smooth' });
     }
+    function getNextStep(slideEl) {
+      const steps = Array.from(slideEl.querySelectorAll('[data-step]'))
+        .sort((a, b) => Number(a.dataset.stepOrder || 0) - Number(b.dataset.stepOrder || 0));
+      return steps.find(s => !s.classList.contains('is-revealed'));
+    }
     document.addEventListener('keydown', (e) => {
       const cur = getCurrentSlideIndex();
-      if (['ArrowDown', 'ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); goToSlide(cur + 1); }
+      if (['ArrowDown', 'ArrowRight', 'PageDown', ' '].includes(e.key)) {
+        e.preventDefault();
+        const nextStep = getNextStep(slides[cur]);
+        if (nextStep) { nextStep.classList.add('is-revealed'); return; }
+        goToSlide(cur + 1);
+      }
       else if (['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); goToSlide(cur - 1); }
       else if (e.key === 'Home') { e.preventDefault(); goToSlide(0); }
       else if (e.key === 'End') { e.preventDefault(); goToSlide(slides.length - 1); }
       else if (/^[1-9]$/.test(e.key)) { e.preventDefault(); goToSlide(parseInt(e.key, 10) - 1); }
+    });
+
+    const stepResetObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          entry.target.querySelectorAll('[data-step]').forEach(s => s.classList.remove('is-revealed'));
+        }
+      });
+    }, { root: container, threshold: 0.5 });
+    slides.forEach(slide => {
+      if (slide.querySelector('[data-step]')) stepResetObserver.observe(slide);
     });
 
     const revealObserver = new IntersectionObserver((entries) => {
