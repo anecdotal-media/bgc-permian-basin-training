@@ -37,10 +37,10 @@ A 1-hour live training deck for Boys & Girls Clubs of the Permian Basin staff. C
 | 8 | Pay attention to your scroll | "The next time you scroll social media, pay attention to what stops your scroll." — Start tonight. |
 | 9 | **Hooks — defined** | Strategy 02. Four-column concept slide: Visual / Curiosity / Statement / Question, each with a one-line description + 3 tactic bullets. NO embeds — they live on slide 10. |
 | 10 | **Hooks — in the wild** | Strategy 02 · In practice. Just the two Instagram reel embeds side-by-side with `.hooks-grid.showcase` (iframe height 640px). Reels: DXHpi8tjJEr (visual), DWZKSdDDl6F (curiosity). |
-| 11 | Outsider lens | "The question to ask yourself is this…" + "If you didn't know this kid — would you stop scrolling?" |
-| 12 | *"See it coming."* — train the reflex | Strategy 03 · Recognize moments as they're happening or about to happen. Two cards: reflex-not-checklist + muscle-not-rule. Sets up slide 13. |
-| 13 | Four signals to spot a story | Strategy 04. First / surprise / contrast / real relationship |
-| 14 | Beyond posed photos | |
+| 11 | *"See it coming."* — train the reflex | Strategy 03 · Planned vs Unplanned moments. Sets up slide 12. |
+| 12 | Four signals to spot a story | Strategy 04. First / surprise / contrast / real relationship |
+| 13 | Beyond posed photos | Tactics 01. Yearbook photos vs real moments |
+| 14 | Outsider lens | "The question to ask yourself is this…" + "If you didn't know this kid — would you stop scrolling?" Lives after Beyond Posed Photos to land the reframe. |
 | 15 | Get close | Tighter than feels comfortable |
 | 16 | Shoot vertical | (almost) always — YouTube long-form is the exception |
 | 17 | Lighting | |
