@@ -23,7 +23,7 @@ A 1-hour live training deck for Boys & Girls Clubs of the Permian Basin staff. C
 - **Fonts:** DM Sans (300/400/500/700), Playfair Display (italic accents), Anton (display)
 - **Anecdotal favicon** + Anecdotal horizontal logo on slide 3 (no Hallpass co-branding — solo Anecdotal engagement)
 
-## Slide structure (27 total)
+## Slide structure (26 total)
 
 | # | Slide | Notes |
 |---|-------|-------|
@@ -48,12 +48,11 @@ A 1-hour live training deck for Boys & Girls Clubs of the Permian Basin staff. C
 | 19 | Lighting | content-2col · silhouette example (`img/lighting-bad.jpg`) |
 | 20 | Audio | |
 | 21 | Pair testimonial with b-roll | (Mug-shot-vs-conversation slide above it was removed in earlier revision) |
-| 22 | Capture more than you need | Two-line statement: capture more / edit ruthlessly |
-| 23 | After you capture — *"Make every second count."* | Sits right after Capture More so the capture/edit pair lands as a unit. Two moves: Cut the wind-up + One CTA per post. (Captions intentionally dropped — Al's A/B testing showed they don't move the needle.) |
-| 24 | Thumb-stop test | "Would I stop scrolling for this?" |
-| 25 | Recap card | 3 columns with big Anton numerals + distilled tag-lines (no bullet lists). Strategy / Tactics / Filters. Strategy column is now two questions (E/E/I + emotion-evoke) rather than three abstract pillars. |
-| 26 | Homework | Capture 3 moments / save 3 thumb-stoppers / post one |
-| 27 | Closing — *"These skills don't stay at the club."* | Q&A |
+| 22 | Capture / edit / make every second count | Statement-dark slide carrying three escalating thoughts: "Capture more than you think you need." / "But then edit ruthlessly." / "Make every second count." Attribution: "Cut the wind-up. Start on the strongest second. Get out before they scroll." Merges what was previously two slides; "One CTA per post" dropped. |
+| 23 | Thumb-stop test | "Would I stop scrolling for this?" |
+| 24 | Recap card | 3 columns with big Anton numerals + distilled tag-lines (no bullet lists). Strategy / Tactics / Filters. Strategy column is now two questions (E/E/I + emotion-evoke) rather than three abstract pillars. |
+| 25 | Homework | Browse-this-week reflection / capture 3 moments / post one |
+| 26 | Closing — *"These skills don't stay at the club."* | Q&A |
 
 ## Imagery in `img/`
 - `cover-hero.jpg` — cinematic close-up (slide 1)
