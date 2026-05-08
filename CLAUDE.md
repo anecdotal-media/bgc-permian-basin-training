@@ -23,7 +23,7 @@ A 1-hour live training deck for Boys & Girls Clubs of the Permian Basin staff. C
 - **Fonts:** DM Sans (300/400/500/700), Playfair Display (italic accents), Anton (display)
 - **Anecdotal favicon** + Anecdotal horizontal logo on slide 3 (no Hallpass co-branding — solo Anecdotal engagement)
 
-## Slide structure (26 total)
+## Slide structure (27 total)
 
 | # | Slide | Notes |
 |---|-------|-------|
@@ -42,17 +42,18 @@ A 1-hour live training deck for Boys & Girls Clubs of the Permian Basin staff. C
 | 13 | Beyond posed photos | Tactics 01. Yearbook photos vs real moments |
 | 14 | **Candid > posed** | Three-up gallery (`.candid-grid`): skateboarder at sunset, kids painting sidewalk, sprinkler jump. Headline is the full thesis: "Candid, un-staged photos capture authenticity in a way that posed photos do not." Photos: `img/candid-1.jpg`, `candid-2.jpg`, `candid-3.jpg` |
 | 15 | Outsider lens | "The question to ask yourself is this…" + "If you didn't know this kid — would you stop scrolling?" Lives after the candid gallery to land the reframe. |
-| 16 | Get close | Tighter than feels comfortable |
-| 17 | Shoot vertical | (almost) always — YouTube long-form is the exception |
-| 18 | Lighting | |
-| 19 | Audio | |
-| 20 | Pair testimonial with b-roll | (Mug-shot-vs-conversation slide above it was removed in earlier revision) |
-| 21 | Capture more than you need | Two-line statement: capture more / post way less |
-| 22 | Thumb-stop test | "Would I stop scrolling for this?" |
-| 23 | Recap card | 3 columns with big Anton numerals + distilled tag-lines (no bullet lists). Strategy / Tactics / Filters |
-| 24 | After you capture — *"Make every second count."* | Two moves: Cut the wind-up + One CTA per post. (Captions intentionally dropped — Al's A/B testing showed they don't move the needle.) |
-| 25 | Homework | Capture 3 moments / save 3 thumb-stoppers / post one |
-| 26 | Closing — *"These skills don't stay at the club."* | Q&A |
+| 16 | Get close | Tighter than feels comfortable. Photo: `img/get-close.jpg` (sports huddle) |
+| 17 | **Step away from the wall** | Tactics 03 · Background depth. Bad-example photo: kid against blank wall (`img/wall-bad.jpg`). Lesson: stepping subjects out of the wall adds depth and lets the background tell more of the story. |
+| 18 | Shoot vertical | (almost) always — YouTube long-form is the exception |
+| 19 | Lighting | content-2col · silhouette example (`img/lighting-bad.jpg`) |
+| 20 | Audio | |
+| 21 | Pair testimonial with b-roll | (Mug-shot-vs-conversation slide above it was removed in earlier revision) |
+| 22 | Capture more than you need | Two-line statement: capture more / post way less |
+| 23 | Thumb-stop test | "Would I stop scrolling for this?" |
+| 24 | Recap card | 3 columns with big Anton numerals + distilled tag-lines (no bullet lists). Strategy / Tactics / Filters |
+| 25 | After you capture — *"Make every second count."* | Two moves: Cut the wind-up + One CTA per post. (Captions intentionally dropped — Al's A/B testing showed they don't move the needle.) |
+| 26 | Homework | Capture 3 moments / save 3 thumb-stoppers / post one |
+| 27 | Closing — *"These skills don't stay at the club."* | Q&A |
 
 ## Imagery in `img/`
 - `cover-hero.jpg` — cinematic close-up (slide 1)
