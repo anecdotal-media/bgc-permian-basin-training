@@ -23,7 +23,7 @@ A 1-hour live training deck for Boys & Girls Clubs of the Permian Basin staff. C
 - **Fonts:** DM Sans (300/400/500/700), Playfair Display (italic accents), Anton (display)
 - **Anecdotal favicon** + Anecdotal horizontal logo on slide 3 (no Hallpass co-branding — solo Anecdotal engagement)
 
-## Slide structure (26 total)
+## Slide structure (25 total)
 
 | # | Slide | Notes |
 |---|-------|-------|
@@ -49,10 +49,9 @@ A 1-hour live training deck for Boys & Girls Clubs of the Permian Basin staff. C
 | 20 | Capture more than you need | Two-line statement: capture more / post way less |
 | 21 | Thumb-stop test | "Would I stop scrolling for this?" |
 | 22 | Recap card | 3 columns with big Anton numerals + distilled tag-lines (no bullet lists). Strategy / Tactics / Filters |
-| 23 | **What to avoid** | 6-card pitfalls gallery (press release / backlit selfie / super-wide / slow start / far-away mic / dim room) |
-| 24 | After you capture — *"Make every second count."* | Two moves: Cut the wind-up + One CTA per post. (Captions intentionally dropped — Al's A/B testing showed they don't move the needle.) |
-| 25 | Homework | Capture 3 moments / save 3 thumb-stoppers / post one |
-| 26 | Closing — *"These skills don't stay at the club."* | Q&A |
+| 23 | After you capture — *"Make every second count."* | Two moves: Cut the wind-up + One CTA per post. (Captions intentionally dropped — Al's A/B testing showed they don't move the needle.) |
+| 24 | Homework | Capture 3 moments / save 3 thumb-stoppers / post one |
+| 25 | Closing — *"These skills don't stay at the club."* | Q&A |
 
 ## Imagery in `img/`
 - `cover-hero.jpg` — cinematic close-up (slide 1)
